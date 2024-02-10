@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-void main()
-{
-  runApp(Home());
+import 'package:rolexwatchapp/utils/producatlist.dart';
+
+void main() {
+  runApp(const Home());
 }
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -13,283 +15,327 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      home: SafeArea(child: Scaffold(
-        backgroundColor: Colors.white,
-
-        body: Container(
-
-          child: Center(
-            child: Column(
-              children: [
-              const   Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-
-                      Icon(Icons.sort,size: 32),
-                      Spacer(),
-                      Icon(Icons.search,size: 32),
-                      Text("  "),
-                      Icon(Icons.shopping_bag_outlined,size: 32),
-
-                    ],
-                  ),
-                ),
-                Row(
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: SingleChildScrollView(
+            child: SizedBox(
+              height: 1085,
+              child: Center(
+                child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(15),
-                      child: Text("Hello,Choose Your \nBest Watch",style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),),
-
+                    const Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.sort, size: 32, color: Colors.black),
+                          Text(
+                            "Mr D.K",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Icon(
+                            Icons.shopping_bag_outlined,
+                            size: 32,
+                            color: Colors.black,
+                          ),
+                        ],
+                      ),
                     ),
-
-                  ],
-                ),
-               SingleChildScrollView(
-                 scrollDirection: Axis.horizontal,
-                 child: Container(
-                   height: 130,
-                   width: 1450,
-                   child: Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                   children: [
-                      Container(
-                       height: 130,
-                       width: 350,
-                       decoration: BoxDecoration(
-                         color: Colors.black12,
-                         borderRadius: BorderRadius.circular(15),
-                       ),
-                        child: Center(
-                          child: Image.asset('asset/img/Rolex-Winder-Category-Banner-Mobile.jpg'),
-                        ),
-                     ),
-                     Container(
-                       height: 130,
-                       width: 350,
-                       decoration: BoxDecoration(
-                         color: Colors.black12,
-                         borderRadius: BorderRadius.circular(15),
-                       ),
-                     ),
-                     Container(
-                       height: 130,
-                       width: 350,
-                       decoration: BoxDecoration(
-                         color: Colors.black12,
-                         borderRadius: BorderRadius.circular(15),
-                       ),
-                     ),
-                     Container(
-                       height: 130,
-                       width: 350,
-                       decoration: BoxDecoration(
-                         color: Colors.black12,
-                         borderRadius: BorderRadius.circular(15),
-                       ),
-                     ),
-
-                   ],
-                   ),
-                 ),
-               ),
-
-             Row(
-               children: [
-                 Padding(
-                   padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-
-                   child: Text("Browse by Brand",style: TextStyle(
-                     color: Colors.black,
-                     fontWeight: FontWeight.bold,
-                     fontSize: 17
-                   ),),
-                 )
-               ],
-             ),
-               SingleChildScrollView(
-                 scrollDirection: Axis.horizontal,
-                 child: Container(
-
-                    width: 600,
-                   child: Row(
-                     children: [
-                       Padding(
-                         padding: const EdgeInsets.symmetric(horizontal: 18),
-                         child: Container(
-                           height: 100,
-                           width: 80,
-
-                           decoration: BoxDecoration(
-                             color: Color(0xffd5d5d5),
-                             borderRadius: BorderRadius.circular(37),
-
-                           ),
-                           child: Center(
-                             child: Image.asset('asset/img/Rolex.png',width: 65),
-                           ),
-                         ),
-
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.symmetric(horizontal: 18),
-                         child: Container(
-                           height: 100,
-                           width: 80,
-                           decoration: BoxDecoration(
-                             color: Color(0xffd5d5d5),
-                             borderRadius: BorderRadius.circular(37),
-                           ),
-
-                           child: Center(
-                             child: Image.asset('asset/img/Titan.png',width: 80),
-                           ),
-                         ),
-
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.symmetric(horizontal: 18),
-                         child: Container(
-                           height: 100,
-                           width: 80,
-                           decoration: BoxDecoration(
-                             color: Color(0xffd5d5d5),
-                             borderRadius: BorderRadius.circular(37),
-                           ),
-
-                           child: Center(
-                             child: Image.asset('asset/img/Omega.png',width: 78),
-                           ),
-                         ),
-
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.symmetric(horizontal: 18),
-                         child: Container(
-                           height: 100,
-                           width: 80,
-                           decoration: BoxDecoration(
-                             color: Color(0xffd5d5d5),
-                             borderRadius: BorderRadius.circular(37),
-                           ),
-
-                           child: Center(
-                             child: Image.asset('asset/img/Hublot.png',width: 73),
-                           ),
-                         ),
-                       ),
-                       Padding(
-                         padding: const EdgeInsets.symmetric(horizontal: 18),
-                         child: Container(
-                           height: 100,
-                           width: 80,
-                           decoration: BoxDecoration(
-                             color: Color(0xffd5d5d5),
-                             borderRadius: BorderRadius.circular(37),
-                           ),
-
-                           child: Center(
-                              child: Image.asset('asset/img/Watch.png',width: 80),
-                           ),
-                         ),
-                       ),
-
-
-                     ],
-
-                   ),
-                 ),
-
-
-               ),
-
-                SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Container(
-                    height: 950,
-                    child: Column(
-
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-
-                        Row(
-
-                          children: [
-                           Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Container(
-                               height: 220,
-                               width: 180,
-                               decoration: BoxDecoration(
-                                   color: Color(0xff959597),
-                                   borderRadius:BorderRadius.circular(10)
-                               ),
-
-                               child: Center(
-                                 child: Image.asset('asset/img/Watch (2).png',height: 180,),
-                               ),
-                             ),
-                           ),
-                            Container(
-                              height: 220,
-                              width: 180,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff959597),
-                                  borderRadius:BorderRadius.circular(10)
-                              ),
-                              child: Center(
-                                child: Image.asset('asset/img/Watch2.png',height: 180,),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height: 220,
-                                width: 180,
-                                decoration: BoxDecoration(
-                                    color: Color(0xff959597),
-                                    borderRadius:BorderRadius.circular(10)
+                        Container(
+                            height: 50,
+                            width: 350,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  spreadRadius: 0.8,
+                                  blurRadius: 2,
                                 ),
-                                child: Center(
-                                  child: Image.asset('asset/img/Watch3.png',height: 180,),
+                              ],
+                            ),
+                            child: const Row(
+                              children: [
+                                Text("  "),
+                                Icon(Icons.search,
+                                  size: 30,
                                 ),
-                              ),
-                            ),
-                            Container(
-                              height: 220,
-                              width: 180,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff959597),
-                                  borderRadius:BorderRadius.circular(10)
-                              ),
-                            ),
-                          ],
-                        ),
+                                Text(
+                                  "  Search",
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Spacer(),
+                                Icon(Icons.qr_code_scanner_sharp),
+                                Text("    "),
+                              ],
+                            )),
                       ],
                     ),
-
-                  ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.black12,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Rolex',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Titan',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(),
+                            ),
+                            child: const Center(
+                                child: Text(
+                              'Omega',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 90,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Fastrack',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Hublot',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Setko',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Column(
+                        children: List.generate(4,
+                          (index) => Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              product1(
+                                Image.asset(imgList1[index]),
+                                nameList1[index],
+                                priceList1[index],
+                              ),
+                              product2(
+                                Image.asset(imgList2[index]),
+                                nameList2[index],
+                                priceList2[index],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-
-
-              ],
-
+              ),
             ),
-
           ),
         ),
-      ),),
+      ),
     );
   }
+}
+
+Widget product1(Image i1, String b1, String p1) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        child: Container(
+          height: 200,
+          width: 170,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black,
+                spreadRadius: 0.3,
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 1),
+                  child: SizedBox(
+                    height: 140,
+                    child: i1,
+                  )),
+              Text(
+                b1,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                p1,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  );
+}
+
+Widget product2(Image i2, String b2, String p2) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        child: Container(
+          height: 200,
+          width: 170,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black,
+                spreadRadius: 0.3,
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 1),
+                  child: SizedBox(
+                    height: 140,
+                    child: i2,
+                  )),
+              Text(
+                b2,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                p2,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  );
 }

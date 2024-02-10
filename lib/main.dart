@@ -1,4 +1,8 @@
  import 'package:flutter/material.dart';
+import 'package:rolexwatchapp/HomeScreen.dart';
+import 'package:rolexwatchapp/ProdectScreen.dart';
+import 'package:rolexwatchapp/playscreen.dart';
+
 
 
  void main()
@@ -13,6 +17,11 @@
    @override
    Widget build(BuildContext context) {
      return MaterialApp(
+       debugShowCheckedModeBanner: false,
+       routes: {
+         '/': (context) => const SplashScreen(),
+         'Home':(context)=> const Home(),
+       },
 
      );
    }
