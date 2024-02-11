@@ -2,6 +2,7 @@
 import 'package:rolexwatchapp/HomeScreen.dart';
 import 'package:rolexwatchapp/ProdectScreen.dart';
 import 'package:rolexwatchapp/playscreen.dart';
+ import 'package:rolexwatchapp/CartScreen.dart';
 
 
 
@@ -21,6 +22,9 @@ import 'package:rolexwatchapp/playscreen.dart';
        routes: {
          '/': (context) => const SplashScreen(),
          'Home':(context)=> const Home(),
+         'Watchdata':(context)=>const  ProductScreen(),
+         'Cart':(context)=>const  CartScreen(),
+
        },
 
      );

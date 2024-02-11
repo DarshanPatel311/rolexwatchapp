@@ -15,14 +15,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
+    return  SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.white ,
           body: SingleChildScrollView(
             child: SizedBox(
-              height: 1085,
+              height: 1380,
               child: Center(
                 child: Column(
                   children: [
@@ -36,6 +34,7 @@ class _HomeState extends State<Home> {
                             "Mr D.K",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
+
                           Icon(
                             Icons.shopping_bag_outlined,
                             size: 32,
@@ -129,7 +128,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                           ),
-                          const SizedBox(
+                           SizedBox(
                             width: 20,
                           ),
                           Container(
@@ -148,7 +147,7 @@ class _HomeState extends State<Home> {
                               ),
                             )),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 20,
                           ),
                           Container(
@@ -168,7 +167,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                           ),
-                          const SizedBox(
+                         SizedBox(
                             width: 20,
                           ),
                           Container(
@@ -188,7 +187,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             width: 20,
                           ),
                           Container(
@@ -211,27 +210,50 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Column(
-                        children: List.generate(4,
-                          (index) => Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              product1(
-                                Image.asset(imgList1[index]),
-                                nameList1[index],
-                                priceList1[index],
+
+
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: List.generate(
+                            watchDataList.length,
+                                (index) => InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, 'Watchdata',arguments: watchDataList[index]);
+                              },
+                              child: watchBox(
+                                name: watchDataList[index]['name'],
+                                price: watchDataList[index]['price'],
+                                img: watchDataList[index]['img'],
+                                rating: watchDataList[index]['rating'],
+
                               ),
-                              product2(
-                                Image.asset(imgList2[index]),
-                                nameList2[index],
-                                priceList2[index],
-                              ),
-                            ],
+                            ),
                           ),
                         ),
-                      ),
+
+                        Column(
+                          children: List.generate(
+                            watchDataList2.length,
+                                (index) => InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, 'Watchdata',arguments: watchDataList2[index]);
+                              },
+                              child: watchBox(
+                                name: watchDataList2[index]['name'],
+                                price: watchDataList2[index]['price'],
+                                img: watchDataList2[index]['img'],
+                                rating: watchDataList2[index]['rating'],
+
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -239,103 +261,99 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-      ),
     );
   }
 }
+  Widget watchBox(
+    {required String img,
+      required String name,
+      required double rating,
 
-Widget product1(Image i1, String b1, String p1) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        child: Container(
-          height: 200,
-          width: 170,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black,
-                spreadRadius: 0.3,
-                blurRadius: 4,
-              ),
-            ],
-          ),
+      required int price}) {
+  return Container(
+    margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+    height: 220,
+    width: 180,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          blurRadius: 3,
+          spreadRadius: 1,
+          color: Colors.black,
+        )
+      ],
+      borderRadius: BorderRadius.circular(20),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+        Stack(
+          children: [
+            Row(
+              children: [
+                Container(
+                  height: 160,
+                  width: 175,
+
+                  child: Image.asset(
+                      img,
+                   height: 150,
+                ),
+                ),
+              ],
+            ),
+
+            Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: Colors.black,
+                  ),
+                ))
+          ],
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 1,
+
+              ),
+
               Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 1),
-                  child: SizedBox(
-                    height: 140,
-                    child: i1,
-                  )),
-              Text(
-                b1,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: Text(
+                  name,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
-              Text(
-                p1,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: Text(
+                  '\$ $price/-',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ],
           ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }
 
-Widget product2(Image i2, String b2, String p2) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        child: Container(
-          height: 200,
-          width: 170,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black,
-                spreadRadius: 0.3,
-                blurRadius: 4,
-              ),
-            ],
-          ),
-          child: Column(
-            children: [
-              Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 1),
-                  child: SizedBox(
-                    height: 140,
-                    child: i2,
-                  )),
-              Text(
-                b2,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                p2,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ],
-  );
-}
+
+
