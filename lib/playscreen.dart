@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: Image.asset('asset/img/watcha.jpg', fit: BoxFit.fill),
+            child: Image.asset('asset/img/splesh.jpg', fit: BoxFit.fill),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
               alignment: Alignment.topCenter,
               height: 150,
               width: 300,
-              color: Colors.white10,
+              color: Color(0xff040205),
               child: InkWell(
                 onTap: () {
                   setState(() {
@@ -38,17 +38,18 @@ class _SplashScreenState extends State<SplashScreen> {
                   });
                 },
                 child: Container(
-                  height: 70,
+                  height: 60,
                   width: 300,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.white12,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: Colors.black,width: 5),
                     boxShadow: const [
                       BoxShadow(
-                        blurRadius: 5,
+                        blurRadius:5,
                         spreadRadius: 0.5,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ],
                   ),
