@@ -1,192 +1,175 @@
 import 'package:flutter/material.dart';
 import 'package:rolexwatchapp/utils/producatlist.dart';
 
-
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({super.key});
-
-  @override
-  State<ProductScreen> createState() => _ProductScreenState();
+void main() {
+  runApp(ProdectScreen());
 }
 
-class _ProductScreenState extends State<ProductScreen> {
+class ProdectScreen extends StatefulWidget {
+  const ProdectScreen({super.key});
+
+  @override
+  State<ProdectScreen> createState() => _ProdectScreenState();
+}
+
+class _ProdectScreenState extends State<ProdectScreen> {
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: Container(
 
-    var watch = ModalRoute.of(context)!.settings.arguments as Map;
-    return SafeArea(
-      child: Scaffold(
-backgroundColor: Colors.white,
-        appBar: AppBar(
-         backgroundColor: Colors.blueGrey,
+            child: Column(
+              children: [
+                Container(
+                  height: 40,
+                  color:  Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
 
-        ),
-        body: Container(
-          height: double.infinity,
-          child: Column(
-
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-
-                  height: 272,
-                  width: double.infinity,
-                  child: Image.asset(
-                    watch['img'],
-
-                  )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("- ",style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.black),
+                      Icon(Icons.shopping_cart_outlined,size: 30,),
+                      Text("  "),
+                    ],
                   ),
-                  Text("- - -",style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.grey),
-                  ),
-                ],
-              ),
+                ),
 
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                padding: EdgeInsets.all(10),
-                height: 48,
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    Text(
-                      watch['name'],
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Icon(Icons.favorite_border,color: Color(0xff1F2544),size: 22,)
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-
-                    SizedBox(width: 10,),
-                    Icon(
-                      Icons.star_half,
-                      color: Colors.black,
-                      size: 17,
-                    ),
-                    Text(
-                      '   ${watch['rating']}  (${watch['reviews']} reviews)  ',
-                      style: TextStyle(color: Colors.black, fontSize: 10),
-                    ),
-
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Divider(thickness: 0.5),
-              ),
-
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                child: Text(
-                  'Description',
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Color(0xff1F2544),
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  watch['description'],
-                  style: TextStyle(color: Color(0xff1F2544), fontSize: 10),
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                // child: Divider(thickness: 0.5),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: [
-                        Text(
-                          'Total price',
-                          style: TextStyle(color: Color(0xff1F2544), fontSize: 13),
-                        ),
-                        SizedBox(height: 10,),
-                        Text(
-                          '\$ ${watch['price']}/-',
-                          style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(38),
-                          child: Container(
-                            height: 50,
-                            width: 290,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15),
+                        Container(
+                          height: 350,
+                          width: 410,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.vertical(bottom: Radius.circular(0)),
+                             // boxShadow: [
+                             //   BoxShadow(
+                             //     blurRadius: 4,
+                             //   )
+                             // ],
+                          ),
 
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 3,
-                                  spreadRadius: 1,
-                                  color: Colors.black,
-                                ),
-                              ],
-
-                            ),
-                            child :InkWell(
-                              onTap: () {
-
-
-                                  cartList.add(watch);
-
-
-                              },
-                            child: Center(
-
-                                  child: Container(
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(horizontal: 78),
-                                        child: Row(
-                                          children: [
-
-                                            Icon (Icons.shopping_cart_outlined),
-                                            Text(" ADD TO CART",style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                            ),)
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                                // )Text("ADD TO CART"),
-                            ),
+                          child: Center(
+                            child: Image.asset('asset/img/6.png'),
 
                           ),
+
                         ),
+
                       ],
                     ),
 
+                   Row(
 
+                     children: [
+                       SizedBox(width: 160,),
+                       Text("_ ",style: TextStyle(
+                           fontSize: 30,
+                           color: Colors.black
+                       ),),
+                       Text("_ _ _",style: TextStyle(
+                           fontSize: 30,
+                           color: Colors.grey
+                       ),),
+
+
+                     ],
+                   ),
+
+                    SizedBox(height: 10,),
+                    Container(
+                         height: 80,
+                      width: 1000,
+                      color: Colors.black12,
+                      child: Row(
+
+                        children: [
+
+                          Text("  Armani Exchange Analog Black \n  Dial Men Watch\n\n\n",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 19
+                          ),),
+                          Icon(Icons.share),
+                          Text("   "),
+                          Icon(Icons.favorite_border,size: 30,),
+                          Text("   "),
+
+                        ],
+                      ),
+                    ),
+
+                    Row(
+                      children: [
+                       Text(" ＄1000 ",style: TextStyle(
+                         fontSize: 27,
+
+                         fontWeight: FontWeight.bold,
+
+                       ),),
+                        Text(" 10% off",style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),),
+
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("  ⭐ ",style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                        Text("4.8 ",style: TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      ],
+                    ),
                   ],
                 ),
-              ),
-            ],
+
+                    SizedBox(height: 100,),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   Container(
+                     height: 50,
+                     width: 350,
+                     decoration: BoxDecoration(
+                       color: Colors.white,
+                       borderRadius: BorderRadius.circular(25),
+                       border: Border.all(),
+                       boxShadow: [
+                         BoxShadow(
+                           blurRadius: 4,
+                         )
+                         ]
+                     ),
+                     child: Row(
+
+                       children: [
+                         Text("                        "),
+                         Icon(Icons.shopping_cart_outlined,size: 30,),
+                         Text("  "),
+                         Text("ADD TO CART",style: TextStyle(
+                           fontSize: 16,
+                           fontWeight: FontWeight.bold,
+                         ),),
+                       ],
+                     ),
+                   ),
+
+                 ],
+               )
+
+
+              ],
+            ),
           ),
         ),
       ),
