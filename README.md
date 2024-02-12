@@ -7,9 +7,13 @@ A new Flutter project.
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
+![Screenshot_20240212_145804-portrait](https://github.com/DarshanPatel311/rolexwatchapp/assets/143177575/acd7640a-0624-40f0-b93b-598a67fb3079)
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)![Screenshot_20240212_145829-portrait](https://github.com/DarshanPatel311/rolexwatchapp/assets/143177575/e9d77dbc-d954-43f0-a393-587717e96ce2)
+
+![Screenshot_20240212_145818-portrait](https://github.com/DarshanPatel311/rolexwatchapp/assets/143177575/f15abea3-ff89-4177-ac99-0e187568ad99)
+![Screenshot_20240212_180301-portrait](https://github.com/DarshanPatel311/rolexwatchapp/assets/143177575/95ab03b7-9ec1-4e39-8202-bae9af848bc4)
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
